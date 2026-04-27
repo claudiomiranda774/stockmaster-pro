@@ -1,7 +1,7 @@
 // ==========================================
 // 1. SEGURIDAD: BLOQUEO POR DOMINIO Y ANTI-COPIA
 // ==========================================
-const dominioPermitido = "tu-usuario.github.io"; 
+const dominioPermitido = "claudiomiranda774.github.io"; 
 
 if (window.location.hostname !== "localhost" && 
     window.location.hostname !== "127.0.0.1" && 
