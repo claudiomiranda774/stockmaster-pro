@@ -88,53 +88,36 @@ textarea { height: 200px; font-family: monospace; }
     .navbar, .toolbar, .entry-panel, .table-controls, .overlay { display: none !important; }
 }
 
-/* ==========================================
-   VERSION MOVIL (RESPONSIVE)
-   ========================================== */
-@media (max-width: 768px) {
-    /* Ajuste de contenedores principales */
-    .container {
-        padding: 10px;
-        width: 95%;
-    }
-
-    /* Convertir el formulario en una sola columna */
-    #formulario-producto {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    /* Ajustar las tarjetas de estadísticas (Kpis) */
+/* FUERZA EL DISEÑO MÓVIL */
+@media screen and (max-width: 600px) {
+    /* Los cuadritos de arriba (KPIs) ahora irán de 2 en 2 */
     .dashboard-stats {
-        grid-template-columns: 1fr 1fr; /* Dos columnas en lugar de cuatro */
-        gap: 10px;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 10px !important;
     }
 
-    /* HACER QUE LA TABLA SE PUEDA DESLIZAR */
-    .table-container {
-        overflow-x: auto; /* Permite scroll horizontal en la tabla */
-        display: block;
-    }
-
-    /* Ocultar columnas menos importantes en móvil para ahorrar espacio */
-    th:nth-child(2), td:nth-child(2), /* Categoría */
-    th:nth-child(5), td:nth-child(5)  /* Ganancia */ {
-        display: none;
-    }
-
-    /* Hacer los botones de acción más grandes para los dedos */
-    .t-btn {
-        padding: 12px;
-        font-size: 1.2rem;
-    }
-
-    /* Ajustar los gráficos para que no ocupen toda la pantalla */
-    .charts-container {
-        grid-template-columns: 1fr; /* Un gráfico sobre otro */
+    /* El formulario ocupará todo el ancho */
+    form {
+        display: flex !important;
+        flex-direction: column !important;
     }
     
-    canvas {
-        max-height: 250px;
+    input, select, button {
+        width: 100% !important;
+        margin-bottom: 10px;
+        height: 45px; /* Más fáciles de tocar */
     }
+
+    /* La tabla es lo que más molesta en el celular */
+    .table-container {
+        display: block;
+        width: 100%;
+        overflow-x: auto; /* Esto permite deslizar la tabla con el dedo */
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Títulos más pequeños para que quepan */
+    h1 { font-size: 1.5rem !important; }
+    h2 { font-size: 1.2rem !important; }
 }
