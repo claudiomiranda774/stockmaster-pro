@@ -87,3 +87,54 @@ textarea { height: 200px; font-family: monospace; }
 @media print {
     .navbar, .toolbar, .entry-panel, .table-controls, .overlay { display: none !important; }
 }
+
+/* ==========================================
+   VERSION MOVIL (RESPONSIVE)
+   ========================================== */
+@media (max-width: 768px) {
+    /* Ajuste de contenedores principales */
+    .container {
+        padding: 10px;
+        width: 95%;
+    }
+
+    /* Convertir el formulario en una sola columna */
+    #formulario-producto {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Ajustar las tarjetas de estadísticas (Kpis) */
+    .dashboard-stats {
+        grid-template-columns: 1fr 1fr; /* Dos columnas en lugar de cuatro */
+        gap: 10px;
+    }
+
+    /* HACER QUE LA TABLA SE PUEDA DESLIZAR */
+    .table-container {
+        overflow-x: auto; /* Permite scroll horizontal en la tabla */
+        display: block;
+    }
+
+    /* Ocultar columnas menos importantes en móvil para ahorrar espacio */
+    th:nth-child(2), td:nth-child(2), /* Categoría */
+    th:nth-child(5), td:nth-child(5)  /* Ganancia */ {
+        display: none;
+    }
+
+    /* Hacer los botones de acción más grandes para los dedos */
+    .t-btn {
+        padding: 12px;
+        font-size: 1.2rem;
+    }
+
+    /* Ajustar los gráficos para que no ocupen toda la pantalla */
+    .charts-container {
+        grid-template-columns: 1fr; /* Un gráfico sobre otro */
+    }
+    
+    canvas {
+        max-height: 250px;
+    }
+}
