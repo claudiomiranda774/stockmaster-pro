@@ -11,7 +11,6 @@ if (window.location.hostname !== "localhost" &&
     document.body.innerHTML = "<div style='text-align:center; margin-top:20%; font-family:sans-serif;'><h1>❌ Licencia No Autorizada</h1><p>Este software no está autorizado para este dominio.</p></div>";
     throw new Error("Copia no autorizada.");
 }
-
 document.oncontextmenu = () => false;
 document.onkeydown = (e) => {
     if(e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74 || e.keyCode == 67)) || (e.ctrlKey && e.keyCode == 85)) {
